@@ -5,6 +5,7 @@ name: '[Prod] Deploy to Firebase Hosting on PR'
 on:
   pull_request:
     branches: [main]
+    
 jobs:
   branch-check:
     if: ${{ github.ref != 'refs/heads/develop' }}
@@ -17,5 +18,5 @@ jobs:
             ${{ github.event.pull_request.comments_url }} \
             -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             -H 'content-type: application/json' \
-            -d "{ \"body\": \"👮<200d>♂️UnitTestでエラーが発生しています🚧内容を確認してください👮<200d>♂️\" }" \
+            -d "{ \"body\": \"⛔\`main\`ブランチにマージできるのは\`develop\`ブランチだけです。マージ先を確認してください。⛔\" }" \
           && exit 1
