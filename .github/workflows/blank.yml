@@ -5,6 +5,7 @@ name: '[Prod] Deploy to Firebase Hosting on PR'
 on:
   pull_request:
     branches: [main]
+    
 jobs:
   branch-check:
     if: ${{ github.ref != 'refs/heads/develop' }}
