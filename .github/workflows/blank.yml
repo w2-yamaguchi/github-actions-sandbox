@@ -35,7 +35,7 @@ jobs:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
   branch-check:
-    if: ${{ github.ref != 'refs/heads/develop' }}
+    if: ${{ github.head_ref != 'develop' }}
     runs-on: ubuntu-latest
     steps:
       - name: Error with different original branch
