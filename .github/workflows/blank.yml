@@ -18,5 +18,5 @@ jobs:
             ${{ github.event.pull_request.comments_url }} \
             -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
             -H 'content-type: application/json' \
-            -d "{ \"body\": \"⛔`main`ブランチにマージできるのは`develop`ブランチだけです。マージ先を確認してください。⛔\" }" \
+            -d "{ \"body\": \"⛔\`main\`ブランチにマージできるのは\`develop\`ブランチだけです。マージ先を確認してください。⛔\" }" \
           && exit 1
